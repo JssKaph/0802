@@ -21,18 +21,20 @@ public class Practice {
 		int count=0;
 		int cnt1=0;
 		int cnt2=0;
-		for (i=0; i<5 ; i++) {
-			for (j=0; j<10; j++) {
-				count++;
-				if (array[i][j] == dap[j]) 
-					array1[i][j] = 'o';
-				else 
-					array1[i][j] = 'x';
+		int[] score = {0,0,0,0,0};
+		for (i=0; i<array.length ; i++) {
+			for (j=0; j<array[i].length; j++) {
+				if (array[i][j] == dap[j]) { 
+					array1[i][j] = 'o'; 
+					score[i] += 10;
+				}
+				else {
+				array1[i][j] = 'x';		
+				}
 				System.out.print(array1[i][j]);
 			}
-			if (count% 5==0) 
-				System.out.println();
-			
+			System.out.println();	
+			System.out.println(score[i]);
 		}	
 	}
 }
